@@ -486,4 +486,14 @@ df['Grade'] = pd.to_numeric(df['Grade'])
 average_grade = df['Grade'].mean()
 
 print("Average grade of the students:", average_grade)
+
+# AVG GRADE BY MAJOR
+# Convert 'Grade' column to numeric
+df['Grade'] = pd.to_numeric(df['Grade'])
+
+# Calculate average grade by major
+average_grade_by_major = df.groupby('Major')['Grade'].mean()
+
+print("Average grade by major:")
+print(average_grade_by_major)
 ```
