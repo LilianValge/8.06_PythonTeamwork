@@ -1,6 +1,10 @@
 # 8.06_PythonTeamwork
 ```py
 # importing data to dictionary
+import pandas as pd
+import json
+
+# JSON data
 data = {
     "Students": [
         {
@@ -295,12 +299,191 @@ data = {
             "City": "San Juan",
             "State": "Puerto Rico",
             "Gender": "Male",
-            "StudentStatus": "
+            "StudentStatus": "Graduate",
+            "Major": "Politics",
+            "Country": "US",
+            "Age": "33",
+            "SAT": "1923",
+            "Grade": "95",
+            "Height": "63"
+        },
+        {
+            "ID": "21",
+            "LastName": "Bonner",
+            "FirstName": "Jaiden",
+            "City": "Remote",
+            "State": "Oregon",
+            "Gender": "Female",
+            "StudentStatus": "Undergraduate",
+            "Major": "Econ",
+            "Country": "US",
+            "Age": "19",
+            "SAT": "1727",
+            "Grade": "67",
+            "Height": "62"
+        },
+        {
+            "ID": "22",
+            "LastName": "Garcia",
+            "FirstName": "Rylee",
+            "City": "New York",
+            "State": "New York",
+            "Gender": "Male",
+            "StudentStatus": "Undergraduate",
+            "Major": "Econ",
+            "Country": "US",
+            "Age": "21",
+            "SAT": "1872",
+            "Grade": "82",
+            "Height": "73"
+        },
+        {
+            "ID": "23",
+            "LastName": "Leon",
+            "FirstName": "Jules",
+            "City": "The X",
+            "State": "Massachusetts ",
+            "Gender": "Female",
+            "StudentStatus": "Graduate",
+            "Major": "Politics",
+            "Country": "US",
+            "Age": "25",
+            "SAT": "1767",
+            "Grade": "89",
+            "Height": "68"
+        },
+        {
+            "ID": "24",
+            "LastName": "French",
+            "FirstName": "Kory",
+            "City": "Beijing",
+            "State": "China",
+            "Gender": "Female",
+            "StudentStatus": "Undergraduate",
+            "Major": "Math",
+            "Country": "China",
+            "Age": "18",
+            "SAT": "1643",
+            "Grade": "79",
+            "Height": "65"
+        },
+        {
+            "ID": "25",
+            "LastName": "Brady",
+            "FirstName": "Kiki",
+            "City": "Stockholm",
+            "State": "Sweden",
+            "Gender": "Male",
+            "StudentStatus": "Undergraduate",
+            "Major": "Politics",
+            "Country": "Sweden",
+            "Age": "19",
+            "SAT": "1919",
+            "Grade": "88",
+            "Height": "64"
+        },
+        {
+            "ID": "26",
+            "LastName": "Jacobson",
+            "FirstName": "Jaidan",
+            "City": "Embarrass",
+            "State": "Minnesota",
+            "Gender": "Male",
+            "StudentStatus": "Graduate",
+            "Major": "Econ",
+            "Country": "US",
+            "Age": "28",
+            "SAT": "1434",
+            "Grade": "96",
+            "Height": "71"
+        },
+        {
+            "ID": "27",
+            "LastName": "Garrett",
+            "FirstName": "Cooper",
+            "City": "Intercourse",
+            "State": "Pennsylvania",
+            "Gender": "Male",
+            "StudentStatus": "Undergraduate",
+            "Major": "Math",
+            "Country": "US",
+            "Age": "20",
+            "SAT": "2119",
+            "Grade": "88",
+            "Height": "71"
+        },
+        {
+            "ID": "28",
+            "LastName": "Gunn",
+            "FirstName": "Tye",
+            "City": "Loco",
+            "State": "Oklahoma",
+            "Gender": "Female",
+            "StudentStatus": "Undergraduate",
+            "Major": "Econ",
+            "Country": "US",
+            "Age": "20",
+            "SAT": "2309",
+            "Grade": "64",
+            "Height": "68"
+        },
+        {
+            "ID": "29",
+            "LastName": "Mosley",
+            "FirstName": "Marni",
+            "City": "Buenos Aires",
+            "State": "Argentina",
+            "Gender": "Male",
+            "StudentStatus": "Graduate",
+            "Major": "Politics",
+            "Country": "Argentina",
+            "Age": "30",
+            "SAT": "2279",
+            "Grade": "85",
+            "Height": "72"
+        },
+        {
+            "ID": "30",
+            "LastName": "Leech",
+            "FirstName": "Elisha",
+            "City": "Acme",
+            "State": "Louisiana",
+            "Gender": "Male",
+            "StudentStatus": "Undergraduate",
+            "Major": "Econ",
+            "Country": "US",
+            "Age": "19",
+            "SAT": "1907",
+            "Grade": "79",
+            "Height": "74"
+        }
+    ]
+}
+
+# Convert to DataFrame
+df = pd.json_normalize(data, 'Students')
+
+# Display DataFrame
+df.head()
+
 ```
 ```py
 # calculating averages
 # AVG AGE
+# Convert 'Age' column to numeric
+df['Age'] = pd.to_numeric(df['Age'])
+
+# Calculate average age
+average_age = df['Age'].mean()
+
+print("Average age of the students:", average_age)
 
 # AVG GRADE
+# Convert 'Grade' column to numeric
+df['Grade'] = pd.to_numeric(df['Grade'])
 
+# Calculate average grade
+average_grade = df['Grade'].mean()
+
+print("Average grade of the students:", average_grade)
 ```
