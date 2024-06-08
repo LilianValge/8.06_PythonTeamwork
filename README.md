@@ -476,7 +476,7 @@ df['Age'] = pd.to_numeric(df['Age'])
 # Calculate average age
 average_age = df['Age'].mean()
 
-print("Average age of the students:", average_age)
+print("Average age of the students:", average_age) # RESULT IS 25.2
 
 # AVG GRADE
 # Convert 'Grade' column to numeric
@@ -485,7 +485,7 @@ df['Grade'] = pd.to_numeric(df['Grade'])
 # Calculate average grade
 average_grade = df['Grade'].mean()
 
-print("Average grade of the students:", average_grade)
+print("Average grade of the students:", average_grade) # RESULT IS 80.36
 
 # AVG GRADE BY MAJOR
 # Convert 'Grade' column to numeric
@@ -495,5 +495,5 @@ df['Grade'] = pd.to_numeric(df['Grade'])
 average_grade_by_major = df.groupby('Major')['Grade'].mean()
 
 print("Average grade by major:")
-print(average_grade_by_major)
+print(average_grade_by_major) # RESULT IS Econ = 76.2, Math = 79.8, Politics = 85.1
 ```
